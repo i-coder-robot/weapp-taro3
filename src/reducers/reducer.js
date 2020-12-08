@@ -1,20 +1,19 @@
-import { FETCHING, SUCCESS, ERROR} from '../actions/actionTypes'
+import {LIST} from "../constants/home";
 
 export const initialState = {
   status:null,
   response:null,
 }
 
-const reducer = (state=initialState, {type,response} = {}) =>{
-  switch (type) {
-    case FETCHING:
-      return {...initialState,status: FETCHING};
-    case SUCCESS:
-      return {...state,status: SUCCESS,response}
-    case ERROR:
-      return {...state,status: ERROR, response}
+export default function my_reducer (state=initialState, action) {
+  switch (action.type) {
+    case LIST:
+      let data = state.list.concat(action.payload.data)
+      return {
+        ...state,
+        list: data
+      }
     default:
       return state
   }
 }
-export default reducer

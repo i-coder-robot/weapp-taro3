@@ -1,5 +1,14 @@
-import {FETCHING,SUCCESS,ERROR} from '../actions/actionTypes'
+import store from '../store'
+import { createApiAction } from './index'
+import { bindActionCreators } from 'redux'
+import api from '../service/api'
+import {LIST} from "../constants/home";
 
-export const fetching = ()=>({type: FETCHING})
-export const success = response => ({type: SUCCESS,response})
-export const error = response =>({type:ERROR,response})
+export const list = createApiAction(LIST, params => {
+  console.log('list',params);
+  return api.get('NervJS/taro/issues', params)
+})
+
+export default bindActionCreators({
+  list,
+}, store.dispatch)
