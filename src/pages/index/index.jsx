@@ -4,6 +4,7 @@ import { AtButton } from 'taro-ui'
 
 import "taro-ui/dist/style/components/button.scss" // 按需引入
 import './index.scss'
+import SubNav from "../../components/subnav";
 
 export default class Index extends Component {
 
@@ -26,6 +27,7 @@ export default class Index extends Component {
         <AtButton type='primary' circle>支持</AtButton>
         <Text>共建？</Text>
         <AtButton type='secondary' circle>来</AtButton>
+        <SubNav />
       </View>
     )
   }
