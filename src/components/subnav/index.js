@@ -18,23 +18,33 @@ export default class  SubNav  extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {}
-    const data = MyAction.GetSubNavList(this.state)
-    console.log(data)
+    this.state = {
+      subNavList:[]
+    }
+    MyAction.GetSubNavList(this.state).then((res)=>{
+      console.log("SubNav Components...")
+      console.log(res)
+      if (res.statusCode===200){
+        this.setState({
+          subNavList:res.data.items,
+        })
+      }
+    })
+
   }
 
   render () {
     return (
       <View className='subNav'>
         <Text>SubNav Page</Text>
-        {/*{*/}
-        {/*  status===SUCCESS && (response&&response.data.items.map(item=>(*/}
-        {/*    <View key={item.id} className='subNavItem'>*/}
-        {/*      <Image className='subNavImg' src={item.src} />*/}
-        {/*      <Text className='subNavTitle'>{item.title}</Text>*/}
-        {/*    </View>*/}
-        {/*  )))*/}
-        {/*}*/}
+        {
+          this.state.subNavList && (this.state.subNavList.map(item=>(
+            <View key={item.id} className='subNavItem'>
+              <Image className='subNavImg' src={item.src} />
+              <Text className='subNavTitle'>{item.title}</Text>
+            </View>
+          )))
+        }
       </View>
     )
   }
