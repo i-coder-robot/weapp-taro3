@@ -23,7 +23,6 @@ export default class  SubNav  extends Component {
       subNavList:[]
     }
     MyAction.GetSubNavList({}).then(res=>{
-      console.log(res)
       if (res.statusCode===200){
         this.setState({
           subNavList:res.data.items,
