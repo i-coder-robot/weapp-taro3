@@ -1,4 +1,5 @@
 export const NAV = 'NAV'
 export const SUBNAV = 'SUBNAV'
+export const GUESS = 'GUESS'
 export const TEAM = 'TEAM'
 export const RUSH = 'RUSH'

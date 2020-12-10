@@ -10,7 +10,7 @@ export default {
     let { url, data } = params
     // let token = getApp().globalData.token
     // if (!token) login()
-    console.log('params', params)
+    // console.log('params', params)
     let contentType = 'application/x-www-form-urlencoded'
     contentType = params.contentType || contentType
     const option = {

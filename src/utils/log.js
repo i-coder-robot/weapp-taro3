@@ -66,7 +66,7 @@ const report = (name, option, type = 'info') => {
   let time = formatTime(new Date())
   // let user = getApp().globalData.user
   if(type=='info'){
-    console.log(time, name, option, device)
+    // console.log(time, name, option, device)
   }else{
     console.error(time, name, option, device)
   }

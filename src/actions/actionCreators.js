@@ -5,7 +5,7 @@ import api from '../service/api'
 import {LIST} from "../constants/home";
 
 export const list = createApiAction(LIST, params => {
-  console.log('list',params);
+  // console.log('list',params);
   return api.get('NervJS/taro/issues', params)
 })
 

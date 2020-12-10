@@ -31,11 +31,11 @@ export const downLoadImg = (imgurl, msg) => {
     wx.downloadFile({
       url: imgurl,
       complete: function (res) {
-        console.log(res)
+        // console.log(res)
         if (res.statusCode === 200) {
           resolve(res.tempFilePath)
         } else {
-          console.log('downloadstatusCode', res)
+          // console.log('downloadstatusCode', res)
           reject(new Error(res))
         }
       },

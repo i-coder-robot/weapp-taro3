@@ -13,7 +13,6 @@ export default class Nav extends Component {
             navList: []
         }
         MyAction.GetNavList({}).then(res => {
-            console.log(res.data.items)
             if (res.statusCode === 200) {
                 this.setState({
                     navList: res.data.items,

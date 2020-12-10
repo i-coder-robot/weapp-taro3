@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
-import { View, Text } from '@tarojs/components'
-import { AtButton } from 'taro-ui'
+import { View } from '@tarojs/components'
+
 
 import "taro-ui/dist/style/components/button.scss" // 按需引入
 import './index.scss'
 import Nav from "../../components/nav";
 import Search from "../../components/search";
+import Banner from "../../components/banner";
+import Guess from "../../components/guess";
+import AD from "../../components/ad";
 
 export default class Index extends Component {
 
@@ -22,14 +25,17 @@ export default class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
-        <AtButton type='primary'>I need Taro UI</AtButton>
-        <Text>Taro UI 支持 Vue 了吗？</Text>
-        <AtButton type='primary' circle>支持</AtButton>
-        <Text>共建？</Text>
-        <AtButton type='secondary' circle>来</AtButton>
+        {/*<Text>Hello world!</Text>*/}
+        {/*<AtButton type='primary'>I need Taro UI</AtButton>*/}
+        {/*<Text>Taro UI 支持 Vue 了吗？</Text>*/}
+        {/*<AtButton type='primary' circle>支持</AtButton>*/}
+        {/*<Text>共建？</Text>*/}
+        {/*<AtButton type='secondary' circle>来</AtButton>*/}
         <Search />
         <Nav />
+        <Banner />
+        <AD />
+        <Guess />
       </View>
     )
   }
