@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {View,Image,Text} from '@tarojs/components'
 import MyAction from '../../actions/counter'
 import './subnav.scss'
+import { base_host } from '../../constants/api'
 
 
 export default class  SubNav  extends Component {
@@ -22,8 +23,6 @@ export default class  SubNav  extends Component {
       subNavList:[]
     }
     MyAction.GetSubNavList(this.state).then((res)=>{
-      console.log("SubNav Components...")
-      console.log(res)
       if (res.statusCode===200){
         this.setState({
           subNavList:res.data.items,
@@ -36,11 +35,10 @@ export default class  SubNav  extends Component {
   render () {
     return (
       <View className='subNav'>
-        <Text>SubNav Page</Text>
         {
           this.state.subNavList && (this.state.subNavList.map(item=>(
             <View key={item.id} className='subNavItem'>
-              <Image className='subNavImg' src={item.src} />
+              <Image className='subNavImg' src={base_host+item.src} />
               <Text className='subNavTitle'>{item.title}</Text>
             </View>
           )))
