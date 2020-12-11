@@ -13,6 +13,7 @@ export default class TabsLeft extends Component {
         }
 
         MyAction.GetRestaurantTabList({}).then(res => {
+            console.log(res)
             if (res.statusCode === 200) {
                 this.setState({
                     restaurantTabLeftList: res.data.items,
