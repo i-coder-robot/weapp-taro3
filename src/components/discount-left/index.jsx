@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React,{Component} from 'react'
 import {View} from '@tarojs/components'
 import DiscountItem from "../discount-item";
 import MyAction from "../../actions/counter";

@@ -18,6 +18,8 @@ export const Rush = createApiAction(GUESS, params=>api.get('/rush',params))
 export const restaurantTabList = createApiAction(GUESS, params=>api.get('/restaurantTabItem',params))
 export const discountLeftList = createApiAction(GUESS, params=>api.get('/discountLeft',params))
 export const discountRightList = createApiAction(GUESS, params=>api.get('/discountRight',params))
+export const restaurantNavList = createApiAction(GUESS, params=>api.get('/restaurantNav',params))
+export const restaurantBillBoardList = createApiAction(GUESS, params=>api.get('/restaurantNav',params))
 export const Me = createApiAction(GUESS, params=>api.get('/me',params))
 
 
@@ -30,6 +32,8 @@ export default bindActionCreators({
   GetRestaurantTabList:restaurantTabList,
   GetDiscountLeftList:discountLeftList,
   GetDiscountRightList:discountRightList,
+  GetRestaurantNavList:restaurantNavList,
+  GetRestaurantBillBoardList:restaurantBillBoardList,
   Me:Me
 }, store.dispatch)
 

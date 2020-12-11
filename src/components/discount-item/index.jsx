@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React,{Component} from 'react'
 import {Image, View, Text} from '@tarojs/components'
 import './discount-item.scss'
 

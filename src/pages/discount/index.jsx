@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Taro from '@tarojs/taro'
 import {AtTabBar} from "taro-ui";
+import "taro-ui/dist/style/components/tab-bar.scss" // 按需引入
 import { View } from '@tarojs/components'
 import DiscountLeft from "../../components/discount-left";
 import DiscountRight from "../../components/discount-right";

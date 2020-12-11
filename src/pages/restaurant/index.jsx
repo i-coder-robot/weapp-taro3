@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Taro from '@tarojs/taro'
 import {View} from '@tarojs/components'
 import {AtTabBar} from "taro-ui";
+import "taro-ui/dist/style/components/tab-bar.scss" // 按需引入
 import ScrollList from '../../components/scroll-list'
 import ClassList from "../../components/class-list";
 import MyTabs from "../../components/tabs";
@@ -21,27 +22,31 @@ export default class Restaurant extends Component{
     }
   }
 
-  render() {
-    const handleBottomNavClick=(value)=>{
-      console.log(`Restaurant Page handleBottomNavClick ${value}`)
+  handleBottomNavClick(value) {
+    console.log(`Restaurant Page handleBottomNavClick ${value}`)
 
-      if (value==0){
-        Taro.navigateTo({url: '/pages/home/index'})
-      }
-      else if(value==1){
-        Taro.navigateTo({url:'/pages/discount/index'})
-      }
-      else if(value==3){
-        Taro.navigateTo({url:'/pages/me/index'})
-      }
+    if (value==0){
+      Taro.navigateTo({url: '/pages/home/index'})
     }
+    else if(value==1){
+      Taro.navigateTo({url:'/pages/discount/index'})
+    }
+    else if(value==3){
+      Taro.navigateTo({url:'/pages/me/index'})
+    }
+  }
 
+  render() {
     return(
         <View>
           <ScrollList />
-          <ClassList />
-          <MyTabs />
-          <AtTabBar fixed selectedColor='#fc673d' tabList={this.state.tabList} onClick={handleBottomNavClick} current={this.state.bottomCurrent} />
+          {/*<ClassList />*/}
+          {/*<MyTabs />*/}
+          <AtTabBar fixed selectedColor='#fc673d'
+            tabList={this.state.tabList}
+            onClick={this.handleBottomNavClick.bind(this)}
+            current={this.state.bottomCurrent}
+          />
         </View>
     )
   }

@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import Taro from '@tarojs/taro'
 import {View,Text,Image} from '@tarojs/components'
 import {AtTabBar} from "taro-ui";
+import "taro-ui/dist/style/components/tab-bar.scss" // 按需引入
 import MyAction from "../../actions/counter";
 import MeItem from "./me-item";
 

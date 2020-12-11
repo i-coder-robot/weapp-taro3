@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React,{Component} from 'react'
 import Taro from '@tarojs/taro'
 import {View} from '@tarojs/components'
 import {AtTabBar} from "taro-ui";
@@ -46,59 +46,13 @@ export default class Index extends Component {
             console.log(`index handleBottomNavClick ${value}`)
             if (value == 1) {
                 console.log("111")
-                Taro.navigateTo(
-                    {
-                        url: '/pages/discount/index',
-                        events: {
-                            // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-                            acceptDataFromOpenedPage: function(data) {
-                                console.log(data)
-                            },
-                            someEvent: function(data) {
-                                console.log(data)
-                            }
-                        },
-                        success: function (res) {
-                            // 通过eventChannel向被打开页面传送数据
-                            res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
-                        }
-                    })
+                Taro.redirectTo({url: '/pages/discount/index',})
             } else if (value == 2) {
                 console.log("222")
-                Taro.navigateTo({
-                    url: '/pages/restaurant/index',
-                    events: {
-                        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-                        acceptDataFromOpenedPage: function(data) {
-                            console.log(data)
-                        },
-                        someEvent: function(data) {
-                            console.log(data)
-                        }
-                    },
-                    success: function (res) {
-                        // 通过eventChannel向被打开页面传送数据
-                        res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
-                    }
-                })
+                Taro.redirectTo({url: '/pages/restaurant/index'})
             } else if (value == 3) {
                 console.log("333")
-                Taro.navigateTo({
-                    url: '/pages/me/index',
-                    events: {
-                        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-                        acceptDataFromOpenedPage: function(data) {
-                            console.log(data)
-                        },
-                        someEvent: function(data) {
-                            console.log(data)
-                        }
-                    },
-                    success: function (res) {
-                        // 通过eventChannel向被打开页面传送数据
-                        res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
-                    }
-                })
+                Taro.redirectTo({url: '/pages/me/index'})
             }
         }
 
