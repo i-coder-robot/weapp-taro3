@@ -21,16 +21,18 @@ export default class Me extends Component{
         { title: '找好店',iconType:'bookmark'},
         { title: '我的',iconType:'user'}
       ],
-      meItem:{}
+      itemList:[]
     }
 
     // eslint-disable-next-line import/no-named-as-default-member
     MyAction.Me({}).then(res => {
+      console.log(res)
       if (res.statusCode === 200) {
         this.setState({
-          meItem: res.data.item,
+          itemList: res.data.items,
         })
       }
+
     })
   }
 
@@ -50,12 +52,12 @@ export default class Me extends Component{
 
     return(
         <View className='me'>
-          {this.state.meItem &&(
+          {this.state.itemList &&(
               <View>
                 <View className='firstLine'>
                   <View className='firstLineLeft'>
                     <View className='meIconBg'>
-                      <Image src={base_host + this.state.meItem.headPic} className='meIcon' />
+                      <Image src={base_host + "/image?imageName=headPic"} className='meIcon' />
                     </View>
                     <View>
                       <View className='profile'>
@@ -67,7 +69,7 @@ export default class Me extends Component{
                   </View>
                   <View>
                     <Text className='homepage'>个人主页</Text>
-                    <Image src={base_host + this.state.meItem.arrow} className='arrow' />
+                    <Image src={base_host +  "/image?imageName=arrow"} className='arrow' />
                   </View>
                 </View>
                 <View className='meHead'>
@@ -75,7 +77,7 @@ export default class Me extends Component{
                     <View className='secondLineLeft'>
                       <View className='card'>
                         <View>
-                          <Image className='profile' src={base_host + this.state.meItem.profile} />
+                          <Image className='profile' src={base_host +  "/image?imageName=profile"} />
                         </View>
                         <View className='words'>
                           <Text className='mingpian'>我的点评名片</Text>
@@ -85,8 +87,8 @@ export default class Me extends Component{
                       <View className='fensi'><Text>粉丝 2 |</Text></View>
                     </View>
                     <View className='codeArea'>
-                      <Image className='code' src={base_host + this.state.meItem.myCode} />
-                      <Image className='arrow' src={base_host + this.state.meItem.arrow} />
+                      <Image className='code' src={base_host +  "/image?imageName=my_code"} />
+                      <Image className='arrow' src={base_host + "/image?imageName=arrow"} />
                     </View>
                   </View>
                 </View>
@@ -94,7 +96,7 @@ export default class Me extends Component{
                   <View className='titleHead'>我的订单</View>
                   <View className='myOrders'>
                     {
-                      this.state.meItem.items1.map(item=>(
+                      this.state.itemList.filter(t=>t.type==1).map(item=>(
                           <MeItem key={item.id} Item={item} />
                       ))
                     }
@@ -102,7 +104,7 @@ export default class Me extends Component{
                   <View className='titleHead'>必备工具</View>
                   <View className='myOrders'>
                     {
-                      this.state.meItem.items2.map(item=>(
+                      this.state.itemList.filter(t=>t.type==2).map(item=>(
                           <MeItem key={item.id} Item={item} />
                       ))
                     }
@@ -111,22 +113,14 @@ export default class Me extends Component{
                 <View className='meOthers'>
                   <View className='meItemRow'>
                     <Text>优惠券</Text>
-                    <Image className='rightArrow' src={base_host + this.state.meItem.arrow} />
-                  </View>
-                  <View className='meItemRow'>
-                    <Text>收藏</Text>
-                    <Image className='rightArrow' src={base_host + this.state.meItem.arrow} />
+                    <Image className='rightArrow' src={base_host + "/image?imageName=arrow"} />
                   </View>
                   <View className='meItemRow'>
                     <View className='settings'>
                       <Text>设置</Text>
                       <Text className='modifyMobile'>修改手机号</Text>
                     </View>
-                    <Image className='rightArrow' src={base_host + this.state.meItem.arrow} />
-                  </View>
-                  <View className='meItemRow'>
-                    <Text>意见反馈</Text>
-                    <Image className='rightArrow' src={base_host + this.state.meItem.arrow} />
+                    <Image className='rightArrow' src={base_host + "/image?imageName=arrow"} />
                   </View>
                 </View>
                 <AtTabBar fixed selectedColor='#fc673d' tabList={this.state.tabList} onClick={handleBottomNavClick} current={this.state.bottomCurrent} />

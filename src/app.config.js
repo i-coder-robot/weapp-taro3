@@ -1,8 +1,9 @@
 export default {
   pages: [
+    'pages/me/index',
     'pages/restaurant/index',
     'pages/index/index',
-    'pages/me/index',
+
     'pages/discount/index',
   ],
   window: {
