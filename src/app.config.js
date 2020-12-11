@@ -1,10 +1,9 @@
 export default {
   pages: [
+    'pages/discount/index',
     'pages/me/index',
     'pages/restaurant/index',
     'pages/index/index',
-
-    'pages/discount/index',
   ],
   window: {
     backgroundTextStyle: 'light',

@@ -84,7 +84,7 @@ export default class Me extends Component{
                           <Text className='morePeople'>让更多人认识你</Text>
                         </View>
                       </View>
-                      <View className='fensi'><Text>粉丝 2 |</Text></View>
+                      <View className='fensi'><Text>粉丝 500W |</Text></View>
                     </View>
                     <View className='codeArea'>
                       <Image className='code' src={base_host +  "/image?imageName=my_code"} />
