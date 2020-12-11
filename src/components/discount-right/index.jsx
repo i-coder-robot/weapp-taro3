@@ -8,12 +8,12 @@ export default class DiscountRight extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            discountRightList: []
+            discountList: []
         }
-        MyAction.GetDiscountRightList({}).then(res => {
+        MyAction.GetDiscountList({}).then(res => {
             if (res.statusCode === 200) {
                 this.setState({
-                    discountRightList: res.data.items,
+                    discountList: res.data.items,
                 })
             }
         })
@@ -23,8 +23,8 @@ export default class DiscountRight extends Component {
         return (
             <View className='discountRight'>
                 {
-                    this.state.discountRightList && this.state.discountRightList.map(item => (
-                        <DiscountItem key={item.id} item={item}/>
+                    this.state.discountList && this.state.discountList.map(item => (
+                        <DiscountItem key={item.id} item={item} />
                     ))
                 }
             </View>
