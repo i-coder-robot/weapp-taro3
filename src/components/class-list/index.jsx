@@ -15,6 +15,7 @@ export default class ClassList extends Component{
           restaurantBillBoardList:[]
       }
       MyAction.GetRestaurantBillBoardList({}).then(res => {
+          console.log(res)
           if (res.statusCode === 200) {
               this.setState({
                   restaurantBillBoardList: res.data.items,

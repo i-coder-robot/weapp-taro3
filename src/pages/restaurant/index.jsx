@@ -40,8 +40,8 @@ export default class Restaurant extends Component{
     return(
         <View>
           <ScrollList />
-          {/*<ClassList />*/}
-          {/*<MyTabs />*/}
+          <ClassList />
+          <MyTabs />
           <AtTabBar fixed selectedColor='#fc673d'
             tabList={this.state.tabList}
             onClick={this.handleBottomNavClick.bind(this)}

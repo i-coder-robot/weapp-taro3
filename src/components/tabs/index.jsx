@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {View} from '@tarojs/components'
 
 import { AtTabs, AtTabsPane } from 'taro-ui'
-
+import "taro-ui/dist/style/components/tabs.scss" // 按需引入
 import './tabs.scss'
 import TabsLeft from "./tabs-left";
 

@@ -18,7 +18,7 @@ export const Rush = createApiAction(GUESS, params=>api.get('/rush',params))
 export const restaurantTabList = createApiAction(GUESS, params=>api.get('/restaurantTabItem',params))
 export const discountList = createApiAction(GUESS, params=>api.get('/discount',params))
 export const restaurantNavList = createApiAction(GUESS, params=>api.get('/restaurantNav',params))
-export const restaurantBillBoardList = createApiAction(GUESS, params=>api.get('/restaurantNav',params))
+export const restaurantBillBoardList = createApiAction(GUESS, params=>api.get('/restaurantBillBoard',params))
 export const Me = createApiAction(GUESS, params=>api.get('/me',params))
 
 
