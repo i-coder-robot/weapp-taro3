@@ -1,54 +1,49 @@
-.rushItem{
+.item{
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 16px 0;
-  .rushHeadItem{
+  .headItem{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    .rushHead{
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      font-size: 36px;
-    }
-    .rushHead2{
+    margin: 16px 0;
+    .head2{
       color:#fc673d
     }
   }
-  .rushImg{
-    //margin-top: 30px;
+
+  .img{
     width: 320px;
     height: 280px;
   }
-  .rushTitle{
+  .foodName{
     margin-top: 10px;
     font-size: 28px;
     font-weight: bold;
   }
-  .rushDesc{
-    .rushIcon{
-      width: 28px;
-      height: 28px;
-    }
-    .rushHotelName{
-      font-size: 28px;
-      color: darkgrey;
-      margin-left: 8px;
-    }
-    .distance{
-      font-size: 28px;
-      color: darkgrey;
-      margin-left: 64px;
-    }
+  .icon{
+    width: 28px;
+    height: 28px;
   }
-  .rushBottom{
-    .rushPrice{
+  .hotelName{
+    font-size: 28px;
+    color: darkgrey;
+    margin-left: 8px;
+  }
+  .bottom{
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    .goodPrice{
       color: orangered;
       font-size: 38px;
     }
-    .rushOriginPrice{
+    .price{
       font-size: 22px;
       margin-left: 8px;
       color: grey;

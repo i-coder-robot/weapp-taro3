@@ -23,37 +23,29 @@ export default class  Rush  extends Component  {
 
   render() {
     return (
-        <View className='rushItem'>
+        <View className='item'>
           {
             this.state.rush && (
               <View>
-                <View className='rushHeadItem'>
-                  <View className='rushHead'>
+                <View className='headItem'>
+                  <View>
                     <Text>{this.state.rush.keyWord1}</Text>
                     <Text>{this.state.rush.keyWord2}</Text>
-                    <Text className='rushHead2'>{this.state.rush.keyWord3}</Text>
+                    <Text className='head2'>{this.state.rush.keyWord3}</Text>
                     <Text>{this.state.rush.keyWord4}</Text>
                   </View>
-                  {/*<View className='rushTimeItem'>*/}
-                  {/*  <Text className='rushTime'>{this.state.rush.rushTime}</Text>*/}
-                  {/*  <Text className='rushTimeSymbol'>{this.state.rush.rushTimeSymbol}</Text>*/}
-                  {/*  <Text className='rushTime'>{this.state.rush.rushTime1}</Text>*/}
-                  {/*  <Text className='rushTimeSymbol'>{this.state.rush.rushTimeSymbol}</Text>*/}
-                  {/*  <Text className='rushTime'>{this.state.rush.rushTime2}</Text>*/}
-                  {/*</View>*/}
                 </View>
-                <Image className='rushImg' src={base_host + this.state.rush.img} />
+                <Image className='img' src={base_host + this.state.rush.img} />
                 <View>
-                  <Text className='rushTitle'>{this.state.rush.foodName}</Text>
+                  <Text className='foodName'>{this.state.rush.foodName}</Text>
                 </View>
-                <View className='rushDesc'>
-                  <Image className='rushIcon' src={base_host + this.state.rush.icon} />
-                  <Text className='rushHotelName'>{this.state.rush.hotelName}</Text>
-                  <Text className='distance'>{this.state.rush.distance}</Text>
+                <View>
+                  <Image className='icon' src={base_host + this.state.rush.icon} />
+                  <Text className='hotelName'>{this.state.rush.hotelName}</Text>
                 </View>
-                <View className='rushBottom'>
-                  <Text className='rushPrice'>￥{this.state.rush.goodPrice}</Text>
-                  <Text className='rushOriginPrice'>￥{this.state.rush.price}</Text>
+                <View className='bottom'>
+                  <Text className='goodPrice'>￥{this.state.rush.goodPrice}</Text>
+                  <Text className='price'>￥{this.state.rush.price}</Text>
                 </View>
               </View>
           )}

@@ -23,28 +23,27 @@ export default class Team extends Component {
 
     render() {
         return (
-            <View className='teamItem'>
+            <View className='Item'>
                 {
 
                     this.state.team && (
                         <View>
-                            <View className='teamHeadItem'>
+                            <View className='headItem'>
                                 <Text>{this.state.team .keyWord1}</Text>
                                 <Text>{this.state.team .keyWord2}</Text>
                                 <Text className='head2'>{this.state.team .keyWord3}</Text>
                                 <Text>{this.state.team .keyWord4}</Text>
                             </View>
-                            <Image className='teamImg' src={base_host + this.state.team .img} />
+                            <Image className='img' src={base_host + this.state.team .img} />
                             <View>
                                 <Text className='foodName'>{this.state.team .foodName}</Text>
                             </View>
                             <View>
-                                <Image className='teamIcon' src={base_host + this.state.team .icon} />
-                                <Text className='teamHotelName'>{this.state.team .hotelName}</Text>
+                                <Image className='icon' src={base_host + this.state.team .icon} />
+                                <Text className='hotelName'>{this.state.team .hotelName}</Text>
                             </View>
-                            <View className='teamBottom'>
-                                {/*<Text className='teamPersons'>{this.state.team .joinPersons}</Text>*/}
-                                <Text className='teamPrice'>￥{this.state.team .goodPrice}</Text>
+                            <View className='bottom'>
+                                <Text className='goodPrice'>￥{this.state.team .goodPrice}</Text>
                                 <Text className='price'>￥{this.state.team .price}</Text>
                             </View>
                         </View>

@@ -1,8 +1,8 @@
-.teamItem{
+.Item{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  .teamHeadItem{
+  .headItem{
     display: flex;
     flex-direction: row;
     font-size: 36px;
@@ -12,7 +12,7 @@
     }
   }
 
-  .teamImg{
+  .img{
     width: 320px;
     height: 280px;
   }
@@ -21,32 +21,23 @@
     font-size: 28px;
     font-weight: bold;
   }
-  .teamIcon{
+  .icon{
     width: 28px;
     height: 28px;
   }
-  .teamHotelName{
+  .hotelName{
     font-size: 28px;
     color: darkgrey;
     margin-left: 8px;
   }
-  .teamBottom{
+  .bottom{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    .teamPersons{
-      border: 1px solid orange;
-      width: 80px;
-      height: 30px;
-      padding-left: 8px;
-      font-size: 26px;
-      color: orange;
-      margin-left: 6px;
-      padding-bottom: 14px;
-    }
-    .teamPrice{
+
+    .goodPrice{
       color: orangered;
       font-size: 38px;
     }
