@@ -40,7 +40,7 @@ export default class Me extends Component{
     const handleBottomNavClick=(value)=>{
       console.log(`Me Page handleBottomNavClick ${value}`)
       if (value==0){
-        Taro.navigateTo({url: '/pages/home/index'})
+        Taro.navigateTo({url: '/pages/index/index'})
       }
       else if(value==1){
         Taro.navigateTo({url:'/pages/discount/index'})

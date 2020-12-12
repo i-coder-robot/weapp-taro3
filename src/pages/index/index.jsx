@@ -63,7 +63,11 @@ export default class Index extends Component {
                 <Banner />
                 <AD />
                 <Guess />
-                <AtTabBar fixed selectedColor='#fc673d' tabList={this.state.tabList} onClick={handleBottomNavClick} current={this.state.bottomCurrent} />
+                <AtTabBar fixed selectedColor='#fc673d'
+                  tabList={this.state.tabList}
+                  onClick={handleBottomNavClick}
+                  current={this.state.bottomCurrent}
+                />
             </View>
         )
     }

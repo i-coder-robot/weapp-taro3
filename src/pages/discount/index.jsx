@@ -28,7 +28,7 @@ export default class Discount extends Component{
     const handleBottomNavClick=(value)=>{
       setBottomCurrent(value)
       if (value==0){
-        Taro.navigateTo({url: '/pages/home/index'})
+        Taro.navigateTo({url: '/pages/index/index'})
       } else if(value==2){
         Taro.navigateTo({url:'/pages/restaurant/index'})
       } else if(value==3){
