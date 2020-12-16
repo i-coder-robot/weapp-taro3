@@ -45,7 +45,6 @@ export default class Index extends Component {
         function handleBottomNavClick(value) {
             console.log(`index handleBottomNavClick ${value}`)
             if (value == 1) {
-                console.log("111")
                 Taro.redirectTo({url: '/pages/discount/index',})
             } else if (value == 2) {
                 console.log("222")

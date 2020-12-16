@@ -26,7 +26,6 @@ export default class Me extends Component{
 
     // eslint-disable-next-line import/no-named-as-default-member
     MyAction.Me({}).then(res => {
-      console.log(res)
       if (res.statusCode === 200) {
         this.setState({
           itemList: res.data.items,

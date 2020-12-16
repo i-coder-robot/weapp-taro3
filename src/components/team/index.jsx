@@ -1,55 +1,42 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {View, Text, Image} from "@tarojs/components";
 import './team.scss'
-import MyAction from "../../actions/counter";
 import {base_host} from "../../constants/api";
 
 
-export default class Team extends Component {
+export default class Team extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            team: {}
-        }
-        MyAction.GetTeam({}).then(res => {
-            if (res.statusCode === 200) {
-                this.setState({
-                    team: res.data.item,
-                })
-            }
-        })
     }
 
-
     render() {
+        // console.log(this.state.team)
+        const item = this.props.team
+        let {src,icon} = this.props.team
+        let teamPic = base_host+src
+        let iconSrc = base_host+icon
         return (
             <View className='Item'>
-                {
-
-                    this.state.team && (
-                        <View>
-                            <View className='headItem'>
-                                <Text>{this.state.team .keyWord1}</Text>
-                                <Text>{this.state.team .keyWord2}</Text>
-                                <Text className='head2'>{this.state.team .keyWord3}</Text>
-                                <Text>{this.state.team .keyWord4}</Text>
-                            </View>
-                            <Image className='img' src={base_host + this.state.team .img} />
-                            <View>
-                                <Text className='foodName'>{this.state.team .foodName}</Text>
-                            </View>
-                            <View>
-                                <Image className='icon' src={base_host + this.state.team .icon} />
-                                <Text className='hotelName'>{this.state.team .hotelName}</Text>
-                            </View>
-                            <View className='bottom'>
-                                <Text className='goodPrice'>￥{this.state.team .goodPrice}</Text>
-                                <Text className='price'>￥{this.state.team .price}</Text>
-                            </View>
+                    <View>
+                        <View className='headItem'>
+                            <Text>{item.keyWord1}</Text>
+                            <Text>{item.keyWord2}</Text>
+                            <Text className='head2'>{item.keyWord3}</Text>
+                            <Text>{item.keyWord4}</Text>
                         </View>
-                    )
-                }
-
+                        <Image src={teamPic} className='img'></Image>
+                        <View>
+                            <Text className='foodName'>{item.foodName}</Text>
+                        </View>
+                        <View>
+                            <Image className='icon' src={iconSrc} />
+                            <Text className='hotelName'>{item.hotelName}</Text>
+                        </View>
+                        <View className='bottom'>
+                            <Text className='goodPrice'>￥{item.goodPrice}</Text>
+                            <Text className='price'>￥{item.price}</Text>
+                        </View>
+                    </View>
             </View>
         )
     }

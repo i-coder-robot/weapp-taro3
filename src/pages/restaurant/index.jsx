@@ -23,8 +23,6 @@ export default class Restaurant extends Component{
   }
 
   handleBottomNavClick(value) {
-    console.log(`Restaurant Page handleBottomNavClick ${value}`)
-
     if (value==0){
       Taro.navigateTo({url: '/pages/index/index'})
     }

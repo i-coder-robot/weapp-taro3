@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
-
 import {View, Image} from '@tarojs/components'
 import './banner.scss'
+import {base_host} from "../../constants/api";
 
 export default class Banner extends Component{
     constructor(props) {
@@ -10,7 +10,7 @@ export default class Banner extends Component{
     render() {
         return (
             <View className='banner'>
-                <Image className='bannerImg' src='http://localhost:9090/v1/dp/image?imageName=banner' />
+                <Image className='bannerImg' src={base_host+'/image?imageName=banner'} />
             </View>
         )
     }

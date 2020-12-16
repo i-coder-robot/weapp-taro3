@@ -9,10 +9,9 @@ export default class  Rush  extends Component  {
   constructor(props) {
     super(props);
     this.state={
-      rush:{}
+      rush:null
     }
     MyAction.GetRush({}).then(res => {
-      console.log(res.data.item)
       if (res.statusCode === 200) {
         this.setState({
           rush: res.data.item,
@@ -35,7 +34,7 @@ export default class  Rush  extends Component  {
                     <Text>{this.state.rush.keyWord4}</Text>
                   </View>
                 </View>
-                <Image className='img' src={base_host + this.state.rush.img} />
+                <Image className='img' src={base_host + this.state.rush.src} />
                 <View>
                   <Text className='foodName'>{this.state.rush.foodName}</Text>
                 </View>
