@@ -35,7 +35,7 @@ export default class  MyTabs extends Component {
                     </AtTabsPane>
                     <AtTabsPane current={this.state.currentNearIndex} index={1}>
                         <View style='padding: 100px 50px;background-color:#FAFBFC;text-align: center;'>
-                            标签页二的内容
+                            火爆招商中...
                         </View>
                     </AtTabsPane>
                 </AtTabs>
